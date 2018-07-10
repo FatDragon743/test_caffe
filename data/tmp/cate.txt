@@ -1,0 +1,6 @@
+0	circle
+1	combine
+2	complex
+3	polygon
+4	simple
+5	word

@@ -1,0 +1,16 @@
+train_net: "../data/tmp/train.prototxt"
+test_net: "../data/tmp/test.prototxt"
+test_iter: 313
+test_interval: 782
+base_lr: 9.99999974738e-05
+display: 782
+max_iter: 1000
+lr_policy: "step"
+gamma: 0.10000000149
+momentum: 0.899999976158
+weight_decay: 0.000199999994948
+stepsize: 26067
+snapshot: 7820
+snapshot_prefix: "shapshot"
+solver_mode: GPU
+type: "SGD"
