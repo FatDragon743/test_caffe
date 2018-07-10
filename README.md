@@ -1,7 +1,7 @@
-#caffe_root = 'E:/caffe27'
-#caffe的执行文件 ：bin目录下的各种exe文件
-#目录结构
-##data
+# caffe_root = 'E:/caffe27'
+# caffe的执行文件 ：bin目录下的各种exe文件
+# 目录结构
+## data
 ### data/tmp  
 主要文件存储
 
