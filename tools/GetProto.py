@@ -1,4 +1,10 @@
 # -*- coding:utf-8 -*-  
+'''
+Created on 2018年7月9日
+
+@author: Administrator
+@attention: 代码方式得到train.prototxt，train.prototxt文件，用于定义训练规程中的网络结构
+'''
 from __future__ import print_function
 import sys
 import os

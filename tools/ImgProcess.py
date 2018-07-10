@@ -1,5 +1,7 @@
 # _*_coding:utf-8 _*_
-
+'''
+主要就是pre_process_img函数，直方图均值化，重新定义大小
+'''
 import cv2
 import urllib
 import numpy as np

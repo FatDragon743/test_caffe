@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//main/main.py=utf-8
+encoding//main/main_train.py=utf-8
+encoding//main/main_train_plt.py=utf-8
+encoding//main/test_cate.py=utf-8
+encoding//test/test2.py=utf-8
+encoding//tools/ConvertMean.py=utf-8
+encoding//tools/GetLabel.py=utf-8
+encoding//tools/GetProto.py=utf-8
+encoding//tools/GetSolver.py=utf-8
+encoding//tools/ImgProcess.py=utf-8

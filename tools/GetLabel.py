@@ -3,6 +3,7 @@
 Created on 2018年7月6日
 
 @author: Administrator
+@attention: 由文件目录，生成label标签,存为文件
 '''
 import sys
 caffe_root = 'E:/caffe27/'  #该文件要从路径{caffe_root}/examples下运行，否则要调整这一行。
@@ -17,7 +18,7 @@ import cv2
 import caffe
 from caffe.proto import caffe_pb2
 import lmdb
-from tools.img_process import *
+from tools.ImgProcess import *
 # 根据图片和标签转化为对应的lmdb格式
 def make_datum(img, label):
     # image is numpy.ndarray format. BGR instead of RGB
@@ -103,11 +104,14 @@ def get_label_lst_by_dir(f_dir):
     """
     return os.listdir(f_dir)
 def get_label_lst_to_file(f_dir):
-    list = get_label_lst_by_dir(f_dir)
-    print list
-    new_list = [(str(idx)+'\t'+i+'\n') for idx,i in enumerate(list)]
+    '''
+    生成cata文件，记录了label标签
+    '''
+    _list = get_label_lst_by_dir(f_dir)
+    print _list
+    new_list = [(str(idx)+'\t'+i+'\n') for idx,i in enumerate(_list)]
     print new_list
-    with open('../data/tmp/cata.txt','w') as f_w:
+    with open('../data/tmp/cate.txt','w') as f_w:
         for i in new_list:
             f_w.write(i)
     print "over!"
@@ -125,6 +129,6 @@ if __name__ == '__main__':
     print 'label_lst is: %s' % ', '.join(label_lst)
     # (1/10)10% to be validation data, 90% to be train data
     # 1/10的文件为验证lmdb, 9/10为训练lmdb
-    percentage = 10
+    percentage = 10#if idx%percentage==0即只有整除的时候进入测试集
     cl.generate_lmdb(label_lst, percentage, train_lmdb, validation_lmdb)
 #     print get_label_lst_by_dir('../data/train')

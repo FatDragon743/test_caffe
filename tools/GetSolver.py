@@ -3,6 +3,7 @@
 Created on 2018年7月9日
 
 @author: Administrator
+@attention: 代码方式生成solver.prototxt文件，用于调配整个训练过程，例如最大训练次数，学习率等
 '''
 import sys
 caffe_root = 'E:/caffe27/'  #该文件要从路径{caffe_root}/examples下运行，否则要调整这一行。
