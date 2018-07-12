@@ -12,7 +12,7 @@ caffe_root = 'E:/caffe27/'  #该文件要从路径{caffe_root}/examples下运行
 sys.path.insert(0, caffe_root + 'python')
 import caffe
 path_root = '../data/tmp/'
-model_def = path_root + 'train.prototxt'
+model_def = path_root + 'test.prototxt'
 model_weights = path_root + 'mymodel.caffemodel'
 
 net = caffe.Net(model_def,      # 定义模型结构
@@ -47,18 +47,19 @@ net.blobs['Data1'].data[...] = transformed_image
 caffe.set_device(0)   # 使用第一块显卡
 caffe.set_mode_gpu()  # 设为gpu模式
 out = net.forward()
-labels_file = path_root + 'cata.txt'
+labels_file = path_root + 'cate.txt'
 labels = np.loadtxt(labels_file, str, delimiter='\t')   #读取类别名称文件
-feat= net.blobs['InnerProduct3'].data[0]#取出最后一层（Softmax）属于某个类别的概率值，并打印
+feat= net.blobs['loss'].data#取出最后一层（Softmax）属于某个类别的概率值，并打印
 
 # print prob
 order=feat.argsort()[0]  #将概率值排序，取出最大值所在的序号 
 print 'the class is:',labels[order]   #将该序号转换成对应的类别名称，并打印
 # 
 # 取出前五个较大值所在的序号
-top_inds = feat.argsort()[::-1][:5]
+top_inds = feat.argsort()
 print 'probabilities and labels:' 
-print str(zip(feat[top_inds], labels[top_inds]))
+print top_inds
+# print str(zip(feat[top_inds], labels[top_inds]))
 import matplotlib.pyplot as plt
 plt.figure(figsize=(15, 3))
 plt.plot(feat.flat)

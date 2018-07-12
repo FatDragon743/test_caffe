@@ -218,17 +218,17 @@ layer {
   }
 }
 layer {
-  name: "SoftmaxWithLoss1"
+  name: "loss"
   type: "SoftmaxWithLoss"
   bottom: "InnerProduct3"
   bottom: "Data2"
-  top: "SoftmaxWithLoss1"
+  top: "loss"
 }
 layer {
-  name: "Accuracy1"
+  name: "acc"
   type: "Accuracy"
   bottom: "InnerProduct3"
   bottom: "Data2"
-  top: "Accuracy1"
+  top: "acc"
 }
 

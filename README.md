@@ -59,7 +59,7 @@ main.py翻版，测试一下last里面的数据
 
 - GetProto.py
 
-代码方式得到train.prototxt，train.prototxt文件，用于定义训练规程中的网络结构
+代码方式得到train.prototxt，test.prototxt文件，用于定义训练规程中的网络结构
 
 - GetSolver.py
 
